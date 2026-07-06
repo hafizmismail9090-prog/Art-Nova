@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Luxurious Obsidian & Gold color theme */
+  --color-luxury-black: #060709;     /* Ultra deep obsidian dark background */
+  --color-luxury-card: #0F111A;      /* Sleek matte coal dark card */
+  --color-luxury-border: #1B1E2B;    /* Delicate metallic border */
+  --color-luxury-accent: #C5A880;    /* Muted gold/bronze metallic highlight */
+  --color-luxury-gold: #D4AF37;      /* Classic bright exhibition gold */
+  --color-luxury-silver: #E2E8F0;    /* Premium platinum white */
+  
+  --animate-gradient: gradient 12s ease infinite;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Custom fade-in animations & utility styles */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Fine premium styles */
+::selection {
+  background: rgba(197, 168, 128, 0.2);
+  color: #ffffff;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
